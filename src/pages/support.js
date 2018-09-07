@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import SupportCommercial from 'images/support_commercial.svg';
 import SupportCommunity from 'images/support_community.svg';
+import Layout from '../components/Layout';
 
 const SupportCard = ({ children, image, title }) => (
   <div className="support-card">
@@ -23,12 +24,15 @@ SupportCard.defaultProps = {
 };
 
 const SupportPage = () => (
-  <div className="support">
+  <Layout location={{
+    text: 'support',
+    path: '/support/',
+  }}><div className="support">
     <Helmet title="Support" />
     <section className="container">
       <h1>
         Need some <strong>help</strong> ?
-      </h1>
+    </h1>
       <div className="support__cards">
         <SupportCard title="Community support" image={SupportCommunity}>
           <p>
@@ -39,36 +43,36 @@ const SupportPage = () => (
               rel="noopener noreferrer"
             >
               Stack Overflow
-            </a>{' '}
+          </a>{' '}
             using the api-platform.com tag.
-          </p>
+        </p>
           <br />
           <p>
             Chat with the community on the{' '}
             <a href="https://symfony.com/slack-invite" target="_blank" rel="noopener noreferrer">
               api-platform channel on Symfony&#39;s Slack
-            </a>
+          </a>
             .
-          </p>
+        </p>
         </SupportCard>
         <SupportCard title="Commercial support" image={SupportCommercial}>
           <p>
             <a href="https://les-tilleuls.coop/en" target="_blank" rel="noopener noreferrer">
               Les-Tilleuls.coop
-            </a>{' '}
+          </a>{' '}
             provides professional services for API Platform and Symfony including training, development and API design.
-          </p>
+        </p>
           <br />
           <p>
             <a href="https://les-tilleuls.coop/en/contact" target="_blank" rel="noopener noreferrer">
               Contact us
-            </a>{' '}
+          </a>{' '}
             for more information.
-          </p>
+        </p>
         </SupportCard>
       </div>
     </section>
-  </div>
+  </div></Layout>
 );
 
 export default SupportPage;

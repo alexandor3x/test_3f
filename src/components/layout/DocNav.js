@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+
 import NavItem from 'components/docs/NavItem';
 
 class DocNav extends Component {
@@ -108,4 +108,4 @@ DocNav.defaultProps = {
   nav: [],
 };
 
-export default withRouter(DocNav);
+export default DocNav;

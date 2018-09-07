@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from "prop-types"
 let stylesStr;
 if ('production' === process.env.NODE_ENV) {
   try {
@@ -9,7 +9,7 @@ if ('production' === process.env.NODE_ENV) {
   }
 }
 
-module.exports = class HTML extends React.Component {
+export default class HTML extends React.Component {
   render() {
     let css;
     if ('production' === process.env.NODE_ENV) {
@@ -35,3 +35,11 @@ module.exports = class HTML extends React.Component {
     );
   }
 };
+HTML.propTypes = {
+  htmlAttributes: PropTypes.object,
+  headComponents: PropTypes.array,
+  bodyAttributes: PropTypes.object,
+  preBodyComponents: PropTypes.array,
+  body: PropTypes.string,
+  postBodyComponents: PropTypes.array,
+}

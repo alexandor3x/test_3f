@@ -4,19 +4,10 @@ import Logo from 'images/logo.svg';
 class Footer extends Component {
   /* eslint-disable no-undef */
   componentDidMount() {
-    if (twttr.widgets) {
-      this.createWidget();
-    } else {
-      twttr.ready(this.createWidget);
-    }
+    
   }
 
-  createWidget = () => {
-    twttr.widgets.createFollowButton('ApiPlatform', this.twitterButton, {
-      size: 'medium',
-      showScreenName: false,
-    });
-  };
+  
 
   /* eslint-enable no-undef */
 

@@ -7,7 +7,10 @@ import Logo from './Logo';
 import Search from './Search';
 import MenuItem from './MenuItem';
 
-const nav = links.map(link => <MenuItem key={link.text} {...link} />);
+const nav = links.map(link => {
+  console.log(link)
+  return <MenuItem key={link.text} text={link.text} location={link.path} rootPath="/" path={link.path} />
+});
 
 const SideMenu = ({ open }) => (
   <div className={classNames('side-menu', { open })}>
@@ -21,7 +24,7 @@ const SideMenu = ({ open }) => (
       <Search className="side-menu__search" />
     </div>
     <nav className="side-menu__nav">
-      <MenuItem key="home" path="/" text="Home" />
+      <MenuItem key="home" path="/" text="Home" location="/" />
       {nav}
     </nav>
   </div>

@@ -9,6 +9,7 @@ import Schema from 'components/home/Schema';
 import References from 'components/home/References';
 import Seo from 'components/home/Seo';
 import Firebase from '../utils/firebase'
+import Layout from '../components/Layout';
 
 class IndexPage extends React.Component {
 
@@ -23,17 +24,20 @@ class IndexPage extends React.Component {
 
   render = () => {
     return (
-      <div className="home">
-        <Helmet title="Innovación continua" />
-        <Cover />
-        <Ecosystem />
-        <AllInOne />
-        <Giants />
-        <Schema />
-        <Expose />
-        <Seo />
-        <References />
-      </div>)
+      <Layout location={{
+        text: 'Home',
+        path: '/',
+      }}><div className="home">
+      <Helmet title="Innovación continua" />
+      <Cover />
+      <Ecosystem />
+      <AllInOne />
+      <Giants />
+      <Schema />
+      <Expose />
+      <Seo />
+      <References />
+    </div></Layout>)
 
   }
 }

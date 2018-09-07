@@ -48,17 +48,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   });
 };
 
-exports.modifyWebpackConfig = ({ config }) => {
-  config.merge({
-    resolve: {
-      root: Path.resolve(__dirname, './src'),
-      alias: {
-        styles: 'styles',
-        images: 'images',
-        data: 'data',
-        components: 'components'
-      }
-    }
-  });
-  return config;
-};
+
+
+
